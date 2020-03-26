@@ -25,6 +25,7 @@ const handleImageIp = (req, res, db) => {
 	// if(!found){
 	// 	res.status(404).json('not found');
 	// }
+	console.log('check');
 	db('users')
 	.where('id','=',id)
 	.increment('score',1)
