@@ -70,6 +70,6 @@ app.get('/profile/:id', (req, res) => {
 app.put('/image', (req, res) => {image.handleImageIp(req,res,db)})
 app.post('/imageUrl', (req, res) => {image.handleApiCall(req,res,db)})
 
-app.listen(3333, ()=>{
-	console.log('app running on port 3333');
+app.listen(process.env.PORT || 3000, ()=>{
+	console.log(`app running on port ${process.env.PORT}`);
 });
