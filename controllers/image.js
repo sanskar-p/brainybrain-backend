@@ -31,7 +31,7 @@ const handleImageIp = (req, res, db) => {
 	.increment('score',1)
 	.returning('score')
 	.then(score => res.json(score[0]))
-	.catch(err => res.status(400).json('cannot find user'))
+	.catch(err => res.status(400).json('blah blah'))
 }
 
 module.exports = {
