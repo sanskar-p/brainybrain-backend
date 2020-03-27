@@ -1,7 +1,7 @@
 const clarifai = require('clarifai');
 
 const app = new Clarifai.App({
- apiKey: 'be8f713f69a64582a6ac55127b2082a4'
+ apiKey: process.env.API_CLARIFAI
 });
 
 const handleApiCall = (req, res) => {
@@ -14,18 +14,7 @@ const handleApiCall = (req, res) => {
 
 const handleImageIp = (req, res, db) => {
 	const {id} = req.body;
-	// let found = false;
-	// database.users.forEach(user => {
-	// 	if(user.id === id){
-	// 		found = true;
-	// 		user.score++
-	// 		return res.json(user.score);
-	// 	}
-	// })
-	// if(!found){
-	// 	res.status(404).json('not found');
-	// }
-	console.log('check');
+
 	db('users')
 	.where('id','=',id)
 	.increment('score',1)
